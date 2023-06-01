@@ -16,6 +16,7 @@ table{border-collapse: collapse; width: 80%; margin: auto; margin-bottom: 10px;}
 .input{padding: 0; margin: 0; height: 40px; font-size: x-large;}
 .footer{
     display: flex;
+	display: none;
     width: 100%;
     justify-content: space-between;
     background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e);

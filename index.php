@@ -28,7 +28,6 @@
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <h2>
                     Per accedere alle vendite esegui il login
-                    ciao ciao
                 </h2>
                 <table>
                     <tr>

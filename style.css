@@ -1,0 +1,145 @@
+* {box-sizing: border-box; margin: 0;}
+.barraSu{display: flex; justify-content: space-between; background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e); border: 2px solid black; border-bottom: 5px solid black;}
+.titolo{text-align: center; font-family:  sans-serif, Verdana; font-size: 80px; margin-top: 20px; margin-bottom: 20px;}
+main{text-align: center; background-image: url(./immagini/gun-for-desktop-004.jpeg); background-size: cover; position: relative; height: 100%; opacity: 0.8;}
+.login_home{width: 50%; text-align: center; margin: auto; border: black 5px solid; border-radius: 15px; position: absolute; top: 15%; left: 25%; background-color: silver; box-shadow: 0px 1px 9px 4px #000000; opacity: 0.9;}
+.login_home h2{font-weight: normal; font-size: xx-large; margin: 30px;}
+table{border-collapse: collapse; width: 80%; margin: auto; margin-bottom: 10px;}
+.dato{width: 50%; font-size:xx-large; padding: 6px 8px; border-bottom: gray 1px solid;}
+.registra{width: 60%; margin: auto; margin-bottom: 20px; display: flex; justify-content: space-between;}
+.button{width: 35%; font-size: 15px; padding: 6px 8px; border: gray 1px solid;}
+.blottone{padding: 10px 15px; font-size: large; margin-top: 30px;}
+.tipologia{font-size: x-large; text-align: center; padding-top: 20px;}
+.reg{font-style: italic; font-weight: bold;}
+.reg:hover{text-decoration: underline;}
+.input{padding: 0; margin: 0; height: 40px; font-size: x-large;}
+.footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e);
+	color: black; 
+    border-top: 5px black solid;
+    position: fixed;
+    bottom: 0;
+}
+.f_r{display: flex;}
+.f_r p{margin: 15px; margin-top: 5px; margin-bottom: 5px; font-size: large; font-style: italic; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+.f_col{width: 80%;}
+.social-icons{display: flex; align-items: center; justify-content: right; margin-right: 30px;}
+.social-icons img{max-width: 40px; margin: 4px;}
+.FakeLink{text-decoration: none; color: black;}
+.nav{
+	background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e); border: 2px solid black; border-bottom: 5px solid black;
+}
+.nav__titolo{
+	font-size: 40px; text-align: center; margin: 0; margin-top: 5px;
+}
+.nav__menu{
+	margin-top: 5px; text-align: center;
+}
+.nav__menu ul{
+	display: flex; justify-content: space-evenly; list-style-type: none; padding-left: 0px; margin: 5px 0 5px 0;
+}
+.navVuoto{
+	width: 500px;
+}
+.nav__menu ul li{
+	padding: 0px 10px;
+}
+.nav__attivo{
+	color: white; font-size: x-large;
+}
+.navlinks a{
+	text-decoration: none; color: black; font-size: x-large;
+}
+.navlinks:hover{
+	text-decoration: underline;
+}
+.regTypeClosed{
+    display: block; height: 0px; opacity: 0; overflow: hidden; margin-bottom: 10px; margin-top: 0px; text-align: center; display: flex; justify-content: space-between;
+}
+.regTypeOpen{
+    display: block; height: auto; overflow: auto; opacity: 1; transition: opacity 0.2s ease-in-out;
+}
+.regLinks{
+	text-decoration: none; color: black; font-size: x-large; margin-left: 30px; margin-right: 30px;
+}
+.regLinks:hover{
+	text-decoration: underline;
+}
+.pagtitle{
+	text-align: center; margin: 30px; font-size: 50px;
+}
+.regTitolo{
+	font-size: 50px; margin: 0; margin-left: 50px;
+}
+.navReg{
+	display: flex; justify-content: space-between; background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e); border: 2px solid black; border-bottom: 5px solid black;
+}
+.navReg ul{
+	padding-left: 0px; list-style-type: none; margin-right: 50px; margin-top: 13px;
+}
+.goLogin{
+	text-decoration: none; color: black; font-size: x-large;
+}
+.goLogin:hover{
+	text-decoration: underline;
+}
+.regContenuto{
+	font-size: large; margin-top: 20px;
+}
+.regForm{
+	width: 70%; margin: auto; position:absolute; top: 30%; left: 15%; text-align: center;
+}
+.regForm table{
+	font-size: x-large;
+}
+.regAvvenuta{
+	font-size: larger;
+	margin-top: 30px;
+}
+.formDati{
+	width: 70%; margin: auto; margin-top:50px; top: 30%; left: 15%; text-align: center;
+}
+.formDati table{
+	font-size: x-large;
+}
+.elencoArmi{
+	margin: auto;
+}
+.elencoArmi h2{
+	margin-bottom: 20px; font-size: x-large; 
+}
+.home__section{display: flex; justify-content: space-evenly; flex-wrap: wrap;}
+.home__col{border: 2px solid black; border-radius: 10px; margin: 22px; width: 25%; position: relative; background: linear-gradient(45deg, #667c3e, silver 40% 60%, #667c3e);}
+.home__col:hover{border: 3px solid black; width: 27%; background: linear-gradient(45deg, #667c3e, silver 30% 70%, #667c3e); transition: width 0.1s ease-in-out; box-shadow: 0px 1px 20px 1px rgba(0,0,0,0.59);}
+.home__col:hover .generi__title{font-size: x-large;}
+.home__col div{width: 95%; height: auto; margin: auto;}
+.home__title{text-align: center; font-size: xx-large; margin: 5px auto 10px auto; padding: 3px;} 
+.homr__title a{text-decoration: none; color: black;}
+.home__img{width: 100%; height: auto; margin: auto; border-radius: 10px;}
+.dida{text-decoration: none; color: black; font-style: italic; font-size: large;}
+.dida:hover{text-decoration: underline;}
+.home__col p{font-size: large; text-align: justify; padding: 5px; margin-bottom: 0px;}
+.par_bold{font-weight: bold;}
+.par_bold a{color: black;}
+#home_title::before{background-color: black;}
+.gunlist{
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: auto;
+	padding-left: 0px;
+}
+.gunlist li{
+	border-radius: 4px;
+	border: 1px solid black;
+	background-image: linear-gradient(45deg, #667c3e, silver 30% 70%, #667c3e);
+	padding: 20px;
+	font-size: x-large;
+	color: black;
+	width: 20%;
+	box-shadow: 0px 1px 6px 1px rgba(0,0,0,0.59);
+}

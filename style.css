@@ -92,10 +92,13 @@ table{border-collapse: collapse; width: 80%; margin: auto; margin-bottom: 10px;}
 	font-size: large; margin-top: 20px;
 }
 .regForm{
-	width: 70%; margin: auto; position:absolute; top: 30%; left: 15%; text-align: center;
+	width: 60%; margin: auto; /*position:absolute; top: 30%; left: 15%;*/ text-align: center;
 }
 .regForm table{
 	font-size: x-large;
+}
+.regForm td{
+	width: 50%;
 }
 .regAvvenuta{
 	font-size: larger;

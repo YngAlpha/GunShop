@@ -32,27 +32,27 @@
             <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="regForm"> 
                 <table>
                     <tr>
-                        <td style="text-align: left;">Username:</td>
+                        <td style="text-align: left; text-indent: 30%;">Username:</td>
                         <td style="text-align: right;"><input class="input" type="text" name="username" <?php echo "value = '$username'" ?> required></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Password:</td>
+                        <td style="text-align: left; text-indent: 30%;">Password:</td>
                         <td style="text-align: right;"><input class="input" type="password" name="password" <?php echo "value = '$password'" ?> required></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Conferma psw:</td>
+                        <td style="text-align: left; text-indent: 30%;">Conferma psw:</td>
                         <td style="text-align: right;"><input class="input" type="password" name="conferma" <?php echo "value = '$conferma'" ?> required></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Nome:</td>
+                        <td style="text-align: left; text-indent: 30%;">Nome:</td>
                         <td style="text-align: right;"><input class="input" type="text" name="nome" <?php echo "value = '$nome'" ?> placeholder="Il tuo nome"></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">Cognome:</td>
+                        <td style="text-align: left; text-indent: 30%;">Cognome:</td>
                         <td style="text-align: right;"><input class="input" type="text" class="input_dati_personali" name="cognome" <?php echo "value = '$cognome'" ?>></td>
                     </tr>
                     <tr>
-                        <td style="text-align: left;">email:</td>
+                        <td style="text-align: left; text-indent: 30%;">email:</td>
                         <td style="text-align: right;"><input class="input" type="text" class="input_dati_personali" name="email" <?php echo "value = '$email'" ?>></td>
                     </tr>
                     <tr>

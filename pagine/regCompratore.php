@@ -25,7 +25,6 @@
             <ul>
                 <li><a href="../index.php" class="goLogin">Login</a></li>
             </ul>
-            </div>
         </div>
         <main class="main2">
             <div class="reg_home">

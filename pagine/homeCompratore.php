@@ -139,7 +139,7 @@
 				if ($ris->num_rows == 0) {
 					echo "<p>Nessuna arma acquistata</p>";
 				} else {
-                    echo "<ul>";
+                    echo "<ul class='gunlist' style='margin-bottom: 100px;'>";
                     foreach($ris as $riga){
                         $arma = $riga['nomeArma'];
                         $tipo = $riga['tipo'];

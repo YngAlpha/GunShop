@@ -5,7 +5,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: fit-content;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../style.css">
     <title>Venditore</title>
 </head>
-<body>
+<body style="height: fit-content;">
     <?php require("nav_Venditore.php"); ?>
     <div class="contenuto">
             <?php
@@ -41,7 +41,7 @@
                         WHERE venditori.username='$username'";
 				$ris = $conn->query($query) or die("<p>Query fallita!</p>");
 				if ($ris->num_rows == 0) {
-					echo "<h2>Nessuna arma acquistata</h2>";
+                    echo "<p style='text-align: center; font-weight: bold; font-size: x-large;'>Nessuna arma in vendita</p>";
 				} else {
                     echo "<ul class='gunlist'>";
                     foreach($ris as $riga){

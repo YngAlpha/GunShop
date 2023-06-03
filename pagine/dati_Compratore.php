@@ -52,45 +52,47 @@
 </head>
 <body>
     <?php require("nav_Compratore.php"); ?>
-	<div class="contenuto">
-		<h1 class="pagtitle">
-			Questi sono i tuoi dati
-		</h1>
-		<?php
-			$sql = "SELECT username, password, nome, cognome, email
-				FROM compratori 
-				WHERE username='".$username."'";
-			$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
-			$row = $ris->fetch_assoc();
-		?>
-		<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="formDati">
-			<table>
-				<tr>
-					<td style="text-align: left;">Username:</td> 
-					<td style="text-align: right;"><input class="input" type="text" name="username" value="<?php echo $row["username"]; ?>" disabled="disabled"></td>
-				</tr>
-				<tr>
-					<td style="text-align: left;">Password:</td> 
-					<td style="text-align: right;"><input class="input" type="text" name="password" value="<?php echo $row["password"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
-				</tr>
-				<tr>
-					<td style="text-align: left;">Nome:</td> 
-					<td style="text-align: right;"><input class="input" type="text" name="nome" value="<?php echo $row["nome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
-				</tr>
-				<tr>
-					<td style="text-align: left;">Cognome:</td> 
-					<td style="text-align: right;"><input type="text" class="input" name="cognome" value="<?php echo $row["cognome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
-				</tr>
-				<tr>
-					<td style="text-align: left;">email:</td> 
-					<td style="text-align: right;"><input type="text" class="input" name="email" value="<?php echo $row["email"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
-				</tr>
-			</table>
-			<p>
-				<input type="submit" name="pulsante_modifica" value="<?php echo $val_pulsante; ?>" class="blottone">
-			</p>
-		</form>	
-	</div>	
+	<main class="mainDati">
+		<div class="formDati">
+			<?php
+				$sql = "SELECT username, password, nome, cognome, email
+					FROM compratori 
+					WHERE username='".$username."'";
+				$ris = $conn->query($sql) or die("<p>Query fallita!</p>");
+				$row = $ris->fetch_assoc();
+			?>
+			<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+				<h1 class="pagtitle">
+					Questi sono i tuoi dati
+				</h1>
+				<table>
+					<tr>
+						<td style="text-align: left;">Username:</td> 
+						<td style="text-align: right;"><input class="input" type="text" name="username" value="<?php echo $row["username"]; ?>" disabled="disabled"></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Password:</td> 
+						<td style="text-align: right;"><input class="input" type="text" name="password" value="<?php echo $row["password"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Nome:</td> 
+						<td style="text-align: right;"><input class="input" type="text" name="nome" value="<?php echo $row["nome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">Cognome:</td> 
+						<td style="text-align: right;"><input type="text" class="input" name="cognome" value="<?php echo $row["cognome"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+					</tr>
+					<tr>
+						<td style="text-align: left;">email:</td> 
+						<td style="text-align: right;"><input type="text" class="input" name="email" value="<?php echo $row["email"]; ?>" <?php if(!$modifica) echo "disabled='disabled'"?>></td>
+					</tr>
+				</table>
+				<p>
+					<input type="submit" name="pulsante_modifica" value="<?php echo $val_pulsante; ?>" class="blottone" style="margin-bottom: 30px;">
+				</p>
+			</form>	
+		</div>	
+	</main>
 	<?php 
 		include('footer.php');
 	?>

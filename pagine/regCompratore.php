@@ -27,88 +27,94 @@
             </ul>
             </div>
         </div>
-        <div class="regContenuto">
-        <h1 style="text-align: center; margin: 20px;">Inserisci i tuoi dati da Compratore. Username e password sono obbligatori per la registrazione. Tutti i dati tranne l'userneme saranno modificabili successivamente</h1>
-            <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="regForm"> 
-                <table>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">Username:</td>
-                        <td style="text-align: right;"><input class="input" type="text" name="username" <?php echo "value = '$username'" ?> required></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">Password:</td>
-                        <td style="text-align: right;"><input class="input" type="password" name="password" <?php echo "value = '$password'" ?> required></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">Conferma psw:</td>
-                        <td style="text-align: right;"><input class="input" type="password" name="conferma" <?php echo "value = '$conferma'" ?> required></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">Nome:</td>
-                        <td style="text-align: right;"><input class="input" type="text" name="nome" <?php echo "value = '$nome'" ?> placeholder="Il tuo nome"></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">Cognome:</td>
-                        <td style="text-align: right;"><input class="input" type="text" class="input_dati_personali" name="cognome" <?php echo "value = '$cognome'" ?>></td>
-                    </tr>
-                    <tr>
-                        <td style="text-align: left; text-indent: 30%;">email:</td>
-                        <td style="text-align: right;"><input class="input" type="text" class="input_dati_personali" name="email" <?php echo "value = '$email'" ?>></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p>
-                                <input type="submit" value="Invia" class="blottone">
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            <h3 class="regAvvenuta">
-            <?php
-            if(isset($_POST["username"]) and isset($_POST["password"])) {
-                if ($_POST["username"] == "" or $_POST["password"] == "") {
-                    echo "username e password non possono essere vuoti!";
-                } elseif ($_POST["password"] != $_POST["conferma"]){
-                    echo "Le password inserite non corrispondono";
-                } else {
-                    $conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
-                    if($conn->connect_error){
-                        die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
-                    }
-
-                    $myquery = "SELECT username 
-						    FROM compratori 
-						    WHERE username='$username'";
-
-                    $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
-                    if ($ris->num_rows > 0) {
-                        echo "Questo username è già stato usato";
-                    } else {
-
-                        $myquery = "INSERT INTO $tipologia (username, password, nome, cognome, email)
-                                    VALUES ('$username', '$password', '$nome', '$cognome','$email')";
-
-
-                        if ($conn->query($myquery) === true) {
-                            session_start();
-                            $_SESSION["username"]=$username;
-                            $_SESSION["tipologia"]=$tipologia;
-                            
-						    $conn->close();
-
-                            echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 5 secondi.";
-                            header('Refresh: 5; URL=home.php');
-
+        <main class="main2">
+            <div class="reg_home">
+                <h1 style="text-align: center; margin: 20px;">Inserisci i tuoi dati da Compratore. Username e password sono obbligatori per la registrazione. Tutti i dati tranne l'userneme saranno modificabili successivamente</h1>
+                <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+                    <table>
+                        <tr>
+                            <td class="dato">
+                                Username:
+                            </td>
+                            <td class="dato">
+                                <input type="text" name="username" class="input" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="dato">
+                                Password:
+                            </td>
+                            <td class="dato">
+                                <input type="password" name="password" class="input" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="dato">Conferma psw:</td>
+                            <td class="dato"><input type="password" name="conferma" class="input" required></td>
+                        </tr>
+                        <tr>
+                            <td class="dato">Nome:</td>
+                            <td class="dato"><input type="text" name="nome" class="input"></td>
+                        </tr>
+                        <tr>
+                            <td class="dato">Cognome:</td>
+                            <td class="dato"><input type="text" name="cognome" class="input"></td>
+                        </tr>
+                        <tr>
+                            <td class="dato">Email:</td>
+                            <td class="dato"><input type="text" name="email" class="input"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p style="text-align: center;"><input type="submit" value="Registrati" class="blottone"></p></td>
+                        </tr>
+                    </table>
+                <h3 class="regAvvenuta">
+                <?php
+                    if(isset($_POST["username"]) and isset($_POST["password"])) {
+                        if ($_POST["username"] == "" or $_POST["password"] == "") {
+                            echo "username e password non possono essere vuoti!";
+                        } elseif ($_POST["password"] != $_POST["conferma"]){
+                            echo "Le password inserite non corrispondono";
                         } else {
-                            echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
+                            $conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
+                            if($conn->connect_error){
+                                die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
+                            }
+
+                            $myquery = "SELECT username 
+                                    FROM compratori 
+                                    WHERE username='$username'";
+
+                            $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
+                            if ($ris->num_rows > 0) {
+                                echo "Questo username è già stato usato";
+                            } else {
+
+                                $myquery = "INSERT INTO $tipologia (username, password, nome, cognome, email)
+                                            VALUES ('$username', '$password', '$nome', '$cognome','$email')";
+
+
+                                if ($conn->query($myquery) === true) {
+                                    session_start();
+                                    $_SESSION["username"]=$username;
+                                    $_SESSION["tipologia"]=$tipologia;
+                                    
+                                    $conn->close();
+
+                                    echo "Registrazione effettuata con successo!<br>sarai ridirezionato alla home tra 5 secondi.";
+                                    header('Refresh: 5; URL=home.php');
+
+                                } else {
+                                    echo "Non è stato possibile effettuare la registrazione per il seguente motivo: " . $conn->error;
+                                }
+                            }
                         }
                     }
-                }
-            }
-            ?>
-        </h3>
-        </form>
-    </div>
+                ?>
+                </h3>
+            </form>
+        </div>
+    </main>
     <?php 
         error_reporting(E_ALL ^ E_WARNING);
 		include('footer.php');

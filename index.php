@@ -23,7 +23,7 @@
         <h1 class="titolo">GunShop</h1>
         <div></div>
     </header>
-    <main>
+    <main class="main">
         <div class="login_home">
             <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
                 <h2>
@@ -57,35 +57,32 @@
                     </tr>
                 </table>
                 <?php
-			if (isset($_POST["username"]) and isset($_POST["password"]) and isset($_POST["tipologia"])) {
-				$conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
-				if($conn->connect_error){
-					die("<h3>Connessione al server non riuscita: ".$conn->connect_error."</h3>");
-				}
+                if (isset($_POST["username"]) and isset($_POST["password"]) and isset($_POST["tipologia"])) {
+                    $conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
+                    if($conn->connect_error){
+                        die("<h3>Connessione al server non riuscita: ".$conn->connect_error."</h3>");
+                    }
 
-				$myquery = "SELECT username, password 
-							FROM $tipologia 
-							WHERE username='$username'
-								AND password='$password'";
+                    $myquery = "SELECT username, password 
+                                FROM $tipologia 
+                                WHERE username='$username'
+                                    AND password='$password'";
 
-				$ris = $conn->query($myquery) or die("<h3>Query fallita! ".$conn->error."</h3>");
+                    $ris = $conn->query($myquery) or die("<h3>Query fallita! ".$conn->error."</h3>");
 
-				if($ris->num_rows == 0){
-					echo "<h3>Utente non trovato o password errata</h3>";
-					$conn->close();
-				} 
-				else {
-					//echo "<p>Utente trovato</p>";
-
-					$_SESSION["username"] = $username;
-					$_SESSION["tipologia"] = $tipologia;
-											
-					$conn->close();
-					header("location: ./pagine/home.php");
-			}
-			}
-
-		?>
+                    if($ris->num_rows == 0){
+                        echo "<h3>Utente non trovato o password errata</h3>";
+                        $conn->close();
+                    } 
+                    else {
+                        $_SESSION["username"] = $username;
+                        $_SESSION["tipologia"] = $tipologia;
+                                                
+                        $conn->close();
+                        header("location: ./pagine/home.php");
+                    }
+                }
+                ?>
             </form>
             <h2>
                 Se non hai ancora effettuato l'accesso, <div class="reg">registrati</div>
